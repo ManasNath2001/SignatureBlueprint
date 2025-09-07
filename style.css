@@ -21,3 +21,21 @@
     margin: 10px auto 0;
     border-radius: 2px;
 }
+
+ul.custom-icons {
+  list-style: none;      /* remove default bullets */
+  padding-left: 0;
+}
+
+ul.custom-icons li {
+  position: relative;
+  padding-left: 1.5rem;  /* space for icon */
+}
+
+ul.custom-icons li::before {
+  content: "\f26a";               /* Unicode of Bootstrap icon */
+  font-family: "bootstrap-icons"; /* required */
+  position: absolute;
+  left: 0;
+  top: 0;
+}
