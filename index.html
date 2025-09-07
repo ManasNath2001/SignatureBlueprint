@@ -16,11 +16,24 @@
 </head>
 
 <body>
+    <!-- Loader -->
+    <div id="loader"
+        class="position-fixed top-0 start-0 w-100 h-100 bg-dark d-flex justify-content-center align-items-center"
+        style="z-index: 2000;">
+        <div class="spinner-border text-light" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+
+
 
     <header class="sticky-top">
         <nav class="navbar navbar-expand-lg bg-body-tertiary">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">Signature Blueprint</a>
+                <a class="navbar-brand" href="#">
+                    <img src="images/logo.jpg" class="rounded-circle" width="30" height="30" alt="img">
+                    Signature Blueprint
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -59,8 +72,18 @@
 
 
     <main>
-        <!-- HERO SECTION -->
+        <!-- SCROLL TOP STICKY BUTTON -->
+        <a href="#hero" id="backToTop" class="fs-1 position-fixed rounded-circle d-none">
+            <i class="bi bi-arrow-up-circle-fill text-primary"></i>
+        </a>
+
+
         <section id="hero" class="align-items-center d-flex flex-column justify-content-center vh-100 mb-5">
+            <!-- background layers -->
+            <div class="hero-bg" id="bg1"></div>
+            <div class="hero-bg hidden" id="bg2"></div>
+
+            <!-- hero content -->
             <div class="text-center">
                 <h1 class="fw-bolder text-white">Your Vision Our Masterpiece</h1>
                 <p class="text-white">Expert Architectural & Interior Visualization</p>
@@ -69,14 +92,17 @@
                 <a class="btn btn-primary rounded-pill">VIEW OUR WORK</a>
             </div>
             <div>
-                <a><i class="bi bi-caret-down-fill"></i></a>
+                <a href="#about" class="scroll-down position-absolute bottom-0 mb-3">
+                    <i class="bi bi-caret-down-fill fs-1 text-white"></i>
+                </a>
             </div>
         </section>
 
 
 
+
         <!-- ABOUT SECTION -->
-        <section class="container pt-5 mb-5">
+        <section id="about" class="container pt-5 mb-5">
             <h2 class="section_title text-center">About Signature Blueprint</h2>
             <div class="align-items-center d-flex flex-column flex-md-row gap-3">
                 <div class="rounded-circle overflow-hidden" style="
@@ -114,7 +140,7 @@
             <h2 class="section_title text-center mb-4">Our Services</h2>
             <div class="row align-items-stretch g-3">
                 <div class="col-12 col-md-6 col-lg-4 d-flex">
-                    <div class="card flex-fill">
+                    <div class="card card__service flex-fill">
                         <div class="card-header">
                             <h3>Architectural & Design Services</h3>
                         </div>
@@ -133,7 +159,7 @@
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 d-flex">
-                    <div class="card flex-fill">
+                    <div class="card card__service flex-fill">
                         <div class="card-header">
                             <h3>Permitting & Compliance</h3>
                         </div>
@@ -154,7 +180,7 @@
                 </div>
 
                 <div class="col-12 col-md-6 col-lg-4 d-flex">
-                    <div class="card flex-fill">
+                    <div class="card card__service flex-fill">
                         <div class="card-header">
                             <h3>Administrative & Legal Assistance</h3>
                         </div>
@@ -404,10 +430,13 @@
                             to hear about your project.</p>
                         <ul class="list-group list-group-flush">
                             <li class="list-group-item bg-transparent"><i class="bi bi-envelope-fill fs-5"></i>
-                                <span>manasnath2001@gmail.com</span></li>
+                                <span>manasnath2001@gmail.com</span>
+                            </li>
                             <li class="list-group-item bg-transparent"><i class="bi bi-telephone-fill fs-5"></i>
-                                <span>+919564536180</span></li>
-                            <li class="list-group-item bg-transparent"><i class="bi bi-geo-alt-fill fs-5"></i> Basanti Kuthi, 4/15
+                                <span>+919564536180</span>
+                            </li>
+                            <li class="list-group-item bg-transparent"><i class="bi bi-geo-alt-fill fs-5"></i> Basanti
+                                Kuthi, 4/15
                                 Shibtala, Dhandabag, Durgapur. Pin-713203</li>
                         </ul>
                     </div>
@@ -426,8 +455,8 @@
                             </div>
                             <div class="form-group mb-3">
                                 <label for="message" class="form-label">Your Message</label>
-                                <textarea name="message" class="form-control"
-                                    placeholder="3D, 2D, Interior etc." rows="8"></textarea>
+                                <textarea name="message" class="form-control" placeholder="3D, 2D, Interior etc."
+                                    rows="8"></textarea>
                             </div>
                             <button type="submit" class="btn btn-primary rounded-pill w-100"><i
                                     class="bi bi-whatsapp me-2"></i> SEND VIA WHATSAPP</button>
